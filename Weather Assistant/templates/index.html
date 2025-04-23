@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Weather Lifestyle Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .card {
+      margin-top: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌤️ Smart Weather Lifestyle Assistant</h1>
+
+  <form method="POST" action="/recommendation">
+    <label for="location">📍 City Name:</label>
+    <input type="text" name="location" placeholder="e.g., Bangalore" required>
+
+    <label for="question">🗣️ Your Question:</label>
+    <textarea name="question" rows="3" placeholder="e.g., What should I wear this weekend?" required></textarea>
+
+    <button type="submit">💬 Get Advice</button>
+  </form>
+
+  {% if reply %}
+  <div class="card">
+    <h3>📍 Location: {{ location }}</h3>
+    <p>❓ You asked: <strong>{{ question }}</strong></p>
+    <h4>💡 Gemini says:</h4>
+    <p>{{ reply|safe }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>
