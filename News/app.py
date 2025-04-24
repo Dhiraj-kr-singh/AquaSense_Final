@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Your GNews API Key
-API_KEY = "a94d2f4d759ca4da998a4ece4b768c8f"
+API_KEY = "+++"
 NEWS_URL = f"https://gnews.io/api/v4/top-headlines?lang=en&topic=weather&token={API_KEY}"
 
 def get_weather_news():
