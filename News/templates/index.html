@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #008CBA;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .news-container {
+            margin: 20px;
+            padding: 20px;
+        }
+        .news-item {
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .news-item h3 {
+            margin-top: 0;
+        }
+        .news-item p {
+            font-size: 14px;
+        }
+        .news-item a {
+            color: #008CBA;
+            text-decoration: none;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Latest Weather News</h1>
+</header>
+
+<div class="news-container">
+    {% if articles %}
+        {% for article in articles %}
+            <div class="news-item">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank">Read more</a>
+                <hr>
+                <small>Published on: {{ article.publishedAt }}</small>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No weather news available at the moment.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
