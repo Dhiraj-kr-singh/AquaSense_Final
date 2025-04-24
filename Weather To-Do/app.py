@@ -6,8 +6,8 @@ import json
 app = Flask(__name__)
 
 # 🔑 API KEYS
-VISUAL_CROSSING_API_KEY = "FV9XNA5ZKKPZJR5ZZZJLXTGUU"
-GEMINI_API_KEY = "AIzaSyB-oTIBdnBfY6H7P9GVFDWGhNKvByHH-hU"
+VISUAL_CROSSING_API_KEY = "+++"
+GEMINI_API_KEY = "+++"
 
 # ⚙️ Configure Gemini
 genai.configure(api_key=GEMINI_API_KEY)
