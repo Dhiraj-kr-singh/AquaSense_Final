@@ -5,8 +5,8 @@ import google.generativeai as genai
 app = Flask(__name__)
 
 # ---- API KEYS ----
-WEATHER_API_KEY = "FV9XNA5ZKKPZJR5ZZZJLXTGUU"
-GEMINI_API_KEY = "AIzaSyB-oTIBdnBfY6H7P9GVFDWGhNKvByHH-hU"
+WEATHER_API_KEY = "+++"
+GEMINI_API_KEY = "+++"
 
 # ---- SETUP GEMINI ----
 genai.configure(api_key=GEMINI_API_KEY)
